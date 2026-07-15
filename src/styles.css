@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import "@fontsource/marcellus";
+@import "@fontsource-variable/outfit";
+@import "@phosphor-icons/web/regular";
+
+@theme inline {
+  --font-display: "Marcellus", ui-serif, Georgia, serif;
+  --font-sans: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-band: var(--band);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-tint: var(--accent-tint);
+  --color-line: var(--line);
+}
+
+/*
+ * Tokens de marca: neutros greige tomados del logo (fondo #cdc5c3, tinta #453f3d)
+ * y un único acento terracota "hilo" para toda la página.
+ * Radios: botones = pill, medios/imagenes = 16px, el resto sin radio.
+ */
+/* Página bloqueada en modo claro: los colores no cambian con el modo del sistema. */
+:root {
+  color-scheme: light;
+  --bg: #fefcfb;
+  --surface: #f5efec;
+  --band: #e7ded9;
+  --ink: #4a433f;
+  --ink-soft: #7a706a;
+  --accent: #cf4a2c;
+  --accent-strong: #b03c21;
+  --accent-tint: #fbe9e2;
+  --line: rgb(74 67 63 / 0.12);
+}
+
+/* Subrayado "puntada" para la palabra acentuada de los titulares */
+.stitch {
+  color: var(--accent);
+  border-bottom: 3px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+  padding-bottom: 0.06em;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Scroll-reveal: solo anima si el usuario no pide movimiento reducido */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

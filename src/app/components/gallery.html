@@ -1,0 +1,36 @@
+<section id="espacio" class="mx-auto max-w-[1400px] scroll-mt-[68px] px-4 py-24 md:px-8 lg:py-32">
+  <div class="max-w-[60ch]" appReveal>
+    <h2 class="font-display text-3xl tracking-tight md:text-4xl lg:text-5xl">El espacio donde vas a aprender</h2>
+    <p class="mt-4 text-lg leading-relaxed text-ink-soft">
+      Un taller luminoso y equipado: una máquina para cada alumno, mesas amplias y todo listo para tu primera clase.
+    </p>
+  </div>
+
+  <div class="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-4">
+    <figure class="col-span-2" appReveal>
+      <img
+        [src]="principal.src"
+        [alt]="principal.alt"
+        [width]="principal.width"
+        [height]="principal.height"
+        loading="lazy"
+        class="aspect-[4/3] w-full rounded-2xl object-cover"
+      />
+      <figcaption class="mt-3 text-sm text-ink-soft">{{ principal.caption }}</figcaption>
+    </figure>
+
+    @for (foto of laterales; track foto.src) {
+      <figure appReveal [style.--reveal-delay]="$index * 90 + 'ms'">
+        <img
+          [src]="foto.src"
+          [alt]="foto.alt"
+          [width]="foto.width"
+          [height]="foto.height"
+          loading="lazy"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+        />
+        <figcaption class="mt-3 text-sm text-ink-soft">{{ foto.caption }}</figcaption>
+      </figure>
+    }
+  </div>
+</section>

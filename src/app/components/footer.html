@@ -1,0 +1,45 @@
+<footer class="border-t border-line bg-surface">
+  <div class="mx-auto flex max-w-[1400px] flex-col items-center gap-6 px-4 py-14 md:flex-row md:justify-between md:px-8">
+    <!--
+      El PNG del logo trae fondo greige propio; object-cover recorta el cuadrado a la
+      franja central donde vive el wordmark. Sobre el fondo claro del footer se integra bien.
+      TODO: exportar del .ai un logo con fondo transparente para un acabado perfecto.
+    -->
+    <img
+      src="logo.png"
+      alt="PatchNim Lab"
+      width="1080"
+      height="1080"
+      loading="lazy"
+      class="block h-20 w-64 rounded-2xl object-cover"
+    />
+
+    <p class="text-sm text-ink">Taller de costura</p>
+
+    <div class="flex items-center gap-5">
+      <!-- TODO: reemplazar 000000000000 por el número real de WhatsApp -->
+      <a
+        href="https://wa.me/000000000000"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp de PatchNim Lab"
+        class="text-2xl text-ink transition-opacity hover:opacity-70"
+      >
+        <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+      </a>
+      <!-- TODO: reemplazar por el usuario real de Instagram -->
+      <a
+        href="https://instagram.com/patchnimlab"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram de PatchNim Lab"
+        class="text-2xl text-ink transition-opacity hover:opacity-70"
+      >
+        <i class="ph ph-instagram-logo" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mx-auto max-w-[1400px] px-4 pb-8 text-center text-xs text-ink md:px-8 md:text-left">
+    &copy; {{ year }} PatchNim Lab. Todos los derechos reservados.
+  </div>
+</footer>
