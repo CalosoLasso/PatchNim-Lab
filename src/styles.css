@@ -53,9 +53,11 @@ body {
   color: var(--ink);
 }
 
-/* Scroll-reveal: solo anima si el usuario no pide movimiento reducido */
+/* Scroll-reveal: solo anima si el usuario no pide movimiento reducido.
+   Condicionado a html.js (clase puesta por un script inline en index.html):
+   sin JavaScript el contenido prerenderizado queda visible, nunca opacity: 0. */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
+  html.js .reveal {
     opacity: 0;
     transform: translateY(24px);
     transition:
@@ -64,7 +66,7 @@ body {
     transition-delay: var(--reveal-delay, 0ms);
   }
 
-  .reveal.is-visible {
+  html.js .reveal.is-visible {
     opacity: 1;
     transform: none;
   }

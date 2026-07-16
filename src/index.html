@@ -1,22 +1,138 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="utf-8" />
-    <title>PatchNim Lab | Talleres de costura desde cero</title>
+    <!-- La keyword "taller de costura en Guadalajara" debe vivir en el título:
+         es la señal on-page que más pesa para la búsqueda local. -->
+    <title>PatchNim Lab | Taller de costura en Guadalajara</title>
     <base href="/" />
+    <!-- Marca que hay JavaScript: el efecto scroll-reveal (styles.css) solo oculta
+         contenido bajo html.js, para que el HTML prerenderizado sea legible sin JS. -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+
+    <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Talleres de costura PatchNim Lab: aprende desde cero, sin experiencia previa, en grupos reducidos. Inscríbete por WhatsApp."
+      content="Aprende a coser desde cero en la Zona Metropolitana de Guadalajara. Talleres de costura en grupos reducidos, sin experiencia previa. Inscríbete por WhatsApp."
     />
-    <meta property="og:title" content="PatchNim Lab | Talleres de costura desde cero" />
+
+    <!-- TODO: reemplazar patchnimlab.com por el dominio real. Aparece aquí, en og:url,
+         en el JSON-LD de abajo y en public/sitemap.xml + public/robots.txt -->
+    <link rel="canonical" href="https://patchnimlab.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PatchNim Lab" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:url" content="https://patchnimlab.com/" />
+    <meta property="og:title" content="PatchNim Lab | Taller de costura en Guadalajara" />
     <meta
       property="og:description"
-      content="Aprende a coser desde cero. Grupos reducidos y acompañamiento paso a paso. Inscríbete por WhatsApp."
+      content="Aprende a coser desde cero en grupos reducidos, sin experiencia previa y con acompañamiento paso a paso."
     />
-    <meta property="og:image" content="logo.png" />
+    <!-- og:image debe ser URL absoluta: las redes no resuelven rutas relativas.
+         TODO: exportar una imagen 1200x630 (horizontal) para que no se recorte al compartir. -->
+    <meta property="og:image" content="https://patchnimlab.com/logo.png" />
+    <meta property="og:image:alt" content="PatchNim Lab, taller de costura" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PatchNim Lab | Taller de costura en Guadalajara" />
+    <meta
+      name="twitter:description"
+      content="Aprende a coser desde cero en grupos reducidos, sin experiencia previa y con acompañamiento paso a paso."
+    />
+    <meta name="twitter:image" content="https://patchnimlab.com/logo.png" />
+
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!--
+      Datos estructurados para el panel local de Google (Local Business).
+      Va estático en el HTML y no inyectado por Angular: la app se renderiza en el
+      cliente, así que este bloque garantiza que el rastreador lo lea sin ejecutar JS.
+      Sin domicilio público: address solo lleva ciudad/estado. Si en algún momento
+      hay una dirección visitable, añadir streetAddress y postalCode también.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "EducationalOrganization"],
+        "@id": "https://patchnimlab.com/#taller",
+        "name": "PatchNim Lab",
+        "alternateName": "PatchNim Lab Taller de Costura",
+        "description": "Taller de costura en la Zona Metropolitana de Guadalajara. Clases desde cero en grupos reducidos, costura en familia, patronaje y confección de prendas.",
+        "url": "https://patchnimlab.com/",
+        "image": "https://patchnimlab.com/logo.png",
+        "logo": "https://patchnimlab.com/logo.png",
+        "inLanguage": "es-MX",
+        "telephone": "+5213324943138",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guadalajara",
+          "addressRegion": "Jalisco",
+          "addressCountry": "MX"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Guadalajara" },
+          { "@type": "City", "name": "Zapopan" },
+          { "@type": "City", "name": "San Pedro Tlaquepaque" },
+          { "@type": "City", "name": "Tonalá" },
+          { "@type": "City", "name": "Tlajomulco de Zúñiga" }
+        ],
+        "sameAs": ["https://www.instagram.com/patchnim.lab/"],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Talleres de costura",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Costura desde cero",
+                "description": "El punto de partida ideal si nunca tomaste una aguja. Aprendes a manejar la máquina, leer un molde y terminar tu primera prenda en pocas clases.",
+                "provider": { "@id": "https://patchnimlab.com/#taller" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Costura en familia",
+                "description": "Clases pensadas para los más chicos, en un ambiente seguro y divertido donde ganan confianza creando con sus manos.",
+                "provider": { "@id": "https://patchnimlab.com/#taller" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Costura como pasatiempo",
+                "description": "Grupos reducidos para aprender a tu ritmo, ya sea por gusto o para dar el primer paso hacia tu propia marca.",
+                "provider": { "@id": "https://patchnimlab.com/#taller" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Diseña tus propias prendas",
+                "description": "Patronaje, moldería y confección completa para crear la ropa que imaginas.",
+                "provider": { "@id": "https://patchnimlab.com/#taller" }
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>

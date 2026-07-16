@@ -1,0 +1,14 @@
+<div class="mx-auto max-w-[1400px] px-4 md:px-8">
+  <!-- preserveAspectRatio none estira el trazado al ancho disponible;
+       non-scaling-stroke evita que el estirón engorde el trazo -->
+  <svg viewBox="0 0 1200 36" preserveAspectRatio="none" fill="none" class="h-6 w-full" focusable="false">
+    <path
+      [attr.d]="paths[variant()]"
+      stroke="var(--accent)"
+      stroke-opacity="0.45"
+      stroke-width="1.75"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+  </svg>
+</div>

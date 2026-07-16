@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Landing de una sola página: solo la raíz. Si algún día se separan los talleres
+     en páginas propias, añadir aquí una <url> por cada una.
+     TODO: reemplazar patchnimlab.com por el dominio real. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://patchnimlab.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

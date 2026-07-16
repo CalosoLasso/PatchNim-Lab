@@ -7,10 +7,11 @@ import { Process } from './components/process';
 import { Testimonials } from './components/testimonials';
 import { Contact } from './components/contact';
 import { Footer } from './components/footer';
+import { Thread } from './components/thread';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Hero, Services, Gallery, Process, Testimonials, Contact, Footer],
+  imports: [Header, Hero, Services, Gallery, Process, Testimonials, Contact, Footer, Thread],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
